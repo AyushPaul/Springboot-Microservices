@@ -24,7 +24,7 @@ import java.util.stream.Stream;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest){
         Order order = new Order();
@@ -41,7 +41,7 @@ public class OrderService {
 
         List<String> skuCodes = order.getOrderLineItemsList().stream().map(OrderLineItems::getSkuCode).toList();
 
-        InventoryResponse[] inventoryResponseArray = webClient.get().
+        InventoryResponse[] inventoryResponseArray = webClientBuilder.build().get().
                 uri("http://inventory-service/api/inventory",uriBuilder -> uriBuilder.queryParam("skuCodes",skuCodes).build())
                 .retrieve().bodyToMono(InventoryResponse[].class).block();
 
