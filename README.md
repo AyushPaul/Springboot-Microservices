@@ -5,7 +5,7 @@
 [![Springboot](https://img.shields.io/badge/KeyCloak-v21.1.1-lightgrey)](https://www.keycloak.org/getting-started/getting-started-docker)
 [![Resilience4J](https://img.shields.io/badge/Resilience4J-v2.0.0-white)](https://resilience4j.readme.io/docs/getting-started)
 
-![](https://github.com/AyushPaul/Springboot-Microservices/blob/main/Architecture.png)
+
 This repository contains a sample Spring Boot microservices project. The project demonstrates how to build, deploy, and manage microservices using Spring Boot and related technologies.
 
 ## Features
@@ -18,6 +18,10 @@ This repository contains a sample Spring Boot microservices project. The project
 - OAuth Authentication using KeyCloak
 - Spring Cloud Config for centralized configuration management
 - Docker for containerization and deployment
+
+## Architecture Diagram
+
+![](https://github.com/AyushPaul/Springboot-Microservices/blob/main/Architecture.png)
 
 ## Prerequisites
 
