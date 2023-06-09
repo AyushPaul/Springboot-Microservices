@@ -40,7 +40,15 @@ This repository contains a sample Spring Boot microservices project. The project
       ```
         mongod
       ```
-  3. 
+  3. If you are having problems starting the MongoDB Server, go through [this](https://stackoverflow.com/questions/59822025/how-to-start-and-stop-mongodb-server-on-windows)  and [this](https://stackoverflow.com/questions/20796714/how-do-i-start-mongo-db-from-windows) StackOverflow answers to start the server for Windows Devices.
+  4. After starting the MongoDB Server, open MongoDB Compass Application and create a database named `product-service` with all the default settings and copy the URI String.
+  5. Paste the URI String in the `application.properties` file of the `product-service` module as follows :
+     ```
+       spring.data.mongodb.uri=<YOUR_URI_STRING>
+     ```
+  6. Spring Data JPA will take care of making the collection and inputting dummy data into it.
+
+- ### Setting up MySQL
 
 ## Getting Started
 
