@@ -24,7 +24,7 @@ This repository contains a sample Spring Boot microservices project. The project
 
 ## Architecture Diagram
 
-![](https://github.com/AyushPaul/Springboot-Microservices/blob/main/Architecture.png)
+![](https://demostoragerg.blob.core.windows.net/githubimages/architecture.png)
 
 ## Prerequisites
 
