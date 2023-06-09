@@ -49,6 +49,22 @@ This repository contains a sample Spring Boot microservices project. The project
   6. Spring Data JPA will take care of making the collection and inputting dummy data into it.
 
 - ### Setting up MySQL
+  1. Install MySQL Community Edition Server through the installer for Windows [here](https://dev.mysql.com/downloads/installer/).
+  2. During installation note down the admin username and password.
+  3. Open up terminal/command prompt  and write `mysql -u root -p` (assuming you are logging as root and have not created another user) and write the password for admin.
+  4. Make new databases named `inventory_service` and `order_service` for each service respectively.
+  5. Write the following commands for the INSERT,UPDATE and DELETE queries to work [(reason)](https://stackoverflow.com/questions/36463966/mysql-when-is-flush-privileges-in-mysql-really-needed) :
+     ```
+      mysql> GRANT ALL PRIVILEGES ON <DB_NAME>.* TO <USER_NAME>@localhost IDENTIFIED BY "<PASSWORD>";
+      mysql> flush privileges;
+     ```
+     Repeat this step for each of the databases.
+  6. Open the  `application.properties` file of the two services and edit the following :
+     ```
+      spring.datasource.url=jdbc:mysql://localhost:<PORT_NUMBER>/<SERVICE_NAME>
+      spring.datasource.username=<YOUR_USERNAME>
+      spring.datasource.password=<YOUR_PASSWORD>
+     ```
 
 ## Getting Started
 
@@ -92,6 +108,7 @@ This repository contains a sample Spring Boot microservices project. The project
 
 ## Demo
 
+- Youtube Link (for better quality) : https://youtu.be/d61nkP-atUo
 
 https://github.com/AyushPaul/Springboot-Microservices/assets/67481937/295dcf95-4b64-4413-b7c8-49d33ffc653d
 
